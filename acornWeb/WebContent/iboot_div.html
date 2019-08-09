@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#table{ display: table; width: 100%; } /* 테이블속성 - 표의 테이블 */
+.row  { display: table-row; } /* tr과 같은의미 */ /* td와 같은의미 */
+.cell { display: table-cell; padding: 3px; border-bottom: 1px solid #DDD;}
+.col1 { width: 20%; }
+.col2 { width: 20%; }
+.col3 { width: 40%; }
+.col4 { width: 20%; }
+</style>
+</head>
+<body>
+	<!-- division display속성을이용 : 반등형으로 동작-->
+	<div id="table">
+		<div class="row">
+			<span class="cell col1">열1-1</span><span class="cell col2">열1-2</span>
+			<span class="cell col3">열1-3</span><span class="cell col4">열1-4</span>
+		</div>
+		<div class="row">
+			<span class="cell col1">열2-1</span><span class="cell col2">열2-2</span>
+			<span class="cell col3">열2-3</span><span class="cell col4">열2-4</span>
+		</div>
+	</div>
+</body>
+</html>

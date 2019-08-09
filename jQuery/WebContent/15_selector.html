@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="clsopt">div2</div>
+	<div class="clsopt">div3</div>
+	<div class="clsopt">div4</div>
+	<div id="one">div5</div>
+	
+	<!-- 문제 
+		1) div 모두의 color를 red로 변경
+		2) clsopt만 선택해서 백그라운드 컬러를 yellow로 변경하시오
+		3) one을 선택해서 폰트를 bold로 변경하시오
+	-->
+	
+	<script>
+		$("*").css("color", "red");
+		$("#clsopt").css("background-color", "yellow");
+		$("#one").css("font-weight","bold");
+
+		
+	</script>
+	
+</body>
+</html>

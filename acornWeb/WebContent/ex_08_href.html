@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SPA(single page application)</title>
+<!-- 클래스스타일 -->
+<style>
+.divdistance {
+	height: 500px
+}
+</style>
+</head>
+<body>
+	<a href="#one">첫 페이지</a> <!-- 책갈피페이지 이동 -->
+	<a href="#two">둘째 페이지</a>
+	<a href="#three">셋째 페이지</a>
+	<div class="divdistance" background-color=yellow></div>
+	<p id="one">첫페이지 : SPA(single page application)로 프로그래밍 할 때 좋음</p>
+
+	<div class="divdistance" background-color=blue></div>
+	<p id="two">둘째 페이지 : 한페이지 내에서 위치 이동</p>
+
+	<div class="divdistance"></div>
+	<p id="three">셋째 페이지: 다양한 현태로 변화 가능</p>
+	<div class="divdistance" background-color=></div>
+
+	<a href="javascript:">빈코드</a>
+	<a href="javascript:alert('hello')">인라인코딩</a>
+	<a href="javascript:test();">함수호출</a>
+	<a href = "ex_01_first.html" target="blank">첫html로 이동</a>
+	<script>
+	// 자바의 변수는 데이터타입을 지정하지 않음 == python도 마찬가지임
+	var test = function () {  //함수도 객체다 //일급함수
+		console.log("test 함수 호출됨");
+	};
+</script>
+</body>
+</html>

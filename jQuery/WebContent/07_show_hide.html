@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+	<style>
+		.mydiv{
+			margin: 10px;
+			padding: 12px;
+			border: 2px solid #666;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class ="mydiv"> show/hide 됩니다.</div>
+	<input id="hide" type="button" value="Hide"/>
+	<input id="show" type="button" value="Show"/>
+	
+	<script>
+		$(document).ready(function () {
+			$("#show").click(function () {
+				$(".mydiv").show(1000, function () { // 1초 duration(출현시간), 뒤에는 콜백함수 가능
+					$(".mydiv").css("background-color", "red");
+				}); 
+			});
+			$("#hide").click(function () {
+				$(".mydiv").hide(1000, function () {
+					$(".mydiv").css("background-color", "blue");
+				});
+			});
+		});	
+	</script>	
+		
+</body>
+</html>

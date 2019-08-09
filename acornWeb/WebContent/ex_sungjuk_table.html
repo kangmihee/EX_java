@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>성적 입력 창</title>
+</head>
+<body>
+	<form action="LoginAction">
+		<!-- 화면디자인(번호 이름 국어영어수학 총점 평균 점수 입력 하는 디자인) -->
+		<table>
+			<tr>
+				<td>
+					<h1>성적입력 테이블</h1>
+					<table border="1">
+						<tr>
+							<td colspan="2"><label for="no">번호</label></td>
+							<td><input type="text" id="no" name="no" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><label for="name">이름</label></td>
+							<td><input type="text" id="name" name="name" /></td>
+						</tr>
+						<tr>
+							<td rowspan="3">과목</td>
+							<td><label for="kor">국어</label></td>
+							<td><input type="text" id="kor" name="kor" /></td>
+						</tr>
+						<tr>
+							<td><label for="eng">영어</label></td>
+							<td><input type="text" id="eng" name="eng" /></td>
+						</tr>
+						<tr>
+
+							<td><label for="mat">수학</label></td>
+							<td><input type="text" id="mat" name="mat" /></td>
+						</tr>
+						<tr>
+							<td colspan="3"><button style="width: 100%" type="submit">입력</button></td>
+						</tr>
+					</table>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<h1>성적확인 테이블</h1>
+					<table border="1">
+						<tr>
+							<td colspan="2"><label for="no">번호</label></td>
+							<td><input type="text" id="no" name="no" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><label for="name">이름</label></td>
+							<td><input type="text" id="name" name="name" /></td>
+						</tr>
+						<tr>
+							<td rowspan="3">과목</td>
+							<td><label for="kor">국어</label></td>
+							<td><input type="text" id="kor" name="kor" /></td>
+						</tr>
+						<tr>
+							<td><label for="eng">영어</label></td>
+							<td><input type="text" id="eng" name="eng" /></td>
+						</tr>
+						<tr>
+
+							<td><label for="mat">수학</label></td>
+							<td><input type="text" id="mat" name="mat" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><label for="total">총점</label></td>
+							<td><input type="text" id="total" name="total" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><label for="avg">평균</label></td>
+							<td><input type="text" id="avg" name="avg" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<br> <br>
+	</form>
+</body>
+</html>

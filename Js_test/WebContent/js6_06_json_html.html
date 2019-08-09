@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id = "id01"></div>
+		<script>
+		// 데이터 이동, 송수신, 데이터표현 -> 데이터 확인 => 데이터 표현
+		// 비동기 통신 : xml, JSON으로 데이터 통신 (tag가 없음)
+			var xmlhttp = new XMLHttpRequest();
+			var url = "urlList.txt";
+			xmlhttp.onreadystatechange = function () { //callback함수 등록
+				// readtState 작업진행상태
+				// 0 : 초기화가 안된상태, 2: request receive 3: processing request
+				// 4: request finish상태 (작업이 완료)
+				// this.status : 작업의 성공여부를 확인 
+				if(this.readyState == 4 && this.status == 200) { // 200번일 때 성공
+					var myArr = JSON.parse(this.responseText); // responseXML
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true); // Post, Get = > 통신상태
+			xmlhttp.send(); // 실행명령
+			
+			function myFunction(arr) { // 객체배열(3개의 객체)
+				var out = "";
+				var i;
+				for(i=0;i<arr.length;i++){
+					out += "<a href='" + arr[i].url +"'>" + arr[i].display + "</a><br>";
+				}
+				// 마지막 출력
+				document.getElementById("id01").innerHTML = out;
+			}
+		</script>
+</body>
+</html>

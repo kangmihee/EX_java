@@ -1,0 +1,239 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Insert title here</title>
+    <meta charset="UTF-8">
+    <!--   1) scrollspy 메뉴 방식을 이용하여 다음 문제를 해결하시요.
+        (1) 첫 페이지 : javascript를 이용하여 버튼을 누르면 동적으로 테이블이 출력하도록 데이터
+            1   2   3   4   5 
+            6   7   8   9   10
+        (2) 두번째 페이지 : 성적 입력이 가능하도록 component배치를 하시요.
+            데이터를 입력하면 배열에 저장하도록 합니다.
+            성적 Object를 만들어서 저장하도록 합니다.
+        (3) 성적 검색을 할 수 있도록 component배치를 하시요.
+            검색 결과는 javascript로 반응하도록 하세요.
+        (4) 네번째 페이지 : 이미지를 3*2 배열로 하여 자기 소개하시요.
+        (5) 다섯번째 페이지 : 오늘 배운 javascript를 정리하여 출력하도록 하시요. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+        body  {position: relative;} /* 상대좌표 */
+        input {background-color: white; text-decoration-color: black;}
+        tr,td {padding: 15px;}
+        table {width: 700px; height: 300px; border-spacing: 10px; border-collapse: collapse;}
+        #section1  {padding-top: 50px;height: 650px;color: #000;background-color: #1E88E5;}
+        #section2  {padding-top: 50px;height: 650px;color: #000;background-color: #673ab7;}
+        #section3  {padding-top: 50px;height: 650px;color: #000;background-color: #ff9800;}
+        #section4  {padding-top: 50px;height: 650px;color: #000;background-color: #00bcd4;}
+        #section5  {padding-top: 50px;height: 650px;color: #000;background-color: #009688;}
+        </style> 
+        <script>
+        	var school=[]; //  배 열 로 정 리
+        	
+            function show(){
+            var data = "<table border=1px><br><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr></table>";
+            document.getElementById('Location').innerHTML = data;
+            }
+
+            function calcdata() {
+                var num1 = parseInt(document.getElementById('in_num1').value);
+                var num2 = parseInt(document.getElementById('in_num2').value);
+                var out_num = calcSum(num1, num2);
+                console.log("out_num:" + out_num); 
+                document.getElementById("out_num").value = out_num;
+                
+            }
+            function calcSum(num1, num2) { 
+                var result = num1 + num2;
+                console.log("result:" + result);
+                return result;
+            }
+        </script>
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top"> 
+                <div class="container-fluid"> 
+                    <div class="navbar-header"> 
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#myNavbar">
+                            <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Menu</a>
+                    </div>
+                    <div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#section1">Section 1</a></li>
+                                <li><a href="#section2">Section 2</a></li>
+                                <li><a href="#section3">Section 3</a></li>
+                                <li><a href="#section4">Section 4</a></li>
+                                <li><a href="#section5">Section 5</a></li>
+                            </ul>
+                        </div>
+                    </div/> 
+                </div>
+            </nav>
+
+            <div id="section1" class="container-fluid">
+            <h1>Table 1</h1>
+            <pre>(1) 첫 페이지 : javascript를 이용하여 버튼을 누르면 동적으로 테이블이 출력하도록 데이터
+                    1   2   3   4   5 
+                    6   7   8   9   10</pre>
+                <form name="myForm">
+                    <input type="button" value="눌러주세요" onclick="show()">
+                </form>
+                <div id="Location"></div>
+            </div>
+
+
+            <div id="section2" class="container-fluid">
+            <h1>Table 2</h1>
+            <pre>두번째 페이지 : 성적 입력이 가능하도록 component배치를 하시요.
+                 데이터를 입력하면 배열에 저장하도록 합니다.
+                 성적 Object를 만들어서 저장하도록</pre>
+                <form> 
+                    <table width="700" height="150" cellspacing="0">
+                        <tr>
+                            <td><label for="no"> 번 호 </label></td>
+                            <td><input type="no" id="no" name="no" /></td>
+                            <td><label for="name"> 이 름 </label></td>
+                            <td><input type="text" id="name" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="kor"> 국 어 </label></td>
+                            <td><input type="number" id="kor" name="kor" /></td>
+                            <td><label for="eng"> 영 어 </label></td>
+                            <td><input type="number" id="eng" name="eng" /></td>
+                            <td><label for="mat"> 수 학 </label></td>
+                            <td><input type="number" id="mat" name="mat" /></td>
+                        </tr>
+                        <tr><td></td><td></td><td></td><td></td><td colspan="2" id="send">
+                            <button type="submit" onclick="sungjukInput();alert('제출하였습니다.');"> 제 출 </button>
+                        </td></tr>
+                    </table>
+                    <script>
+                        function sungjukInput() {
+                            var no = document.getElementById("no").value;
+                            var name = document.getElementById("name").value;
+                            var kor = document.getElementById("kor").value;
+                            var eng = document.getElementById("eng").value;
+                            var mat = document.getElementById("mat").value;
+                            var tot = kor+eng+mat;
+                            var avr = tot/3;
+                            var student = new Object();  // Object array
+                            student.no = no; // map data input
+                            student.name = name;
+                            student.kor = kor;
+                            student.eng = eng;
+                            student.mat = mat;
+                            student.tot = tot;
+                            student.avr = avr;
+                            school.push(student);
+                            console.log(student.name);
+                        }
+                    </script>
+                </form>     
+            </div>
+  
+
+            <div id="section3" class="container-fluid">
+            <h1>Table 3</h1>
+            <pre>성적 검색을 할 수 있도록 component배치를 하시요. 검색 결과는 javascript로 반응하도록 하세요.</pre>
+                <form name="myForm">
+                    <div class="form-group">
+                            <label for="searchn"> 이 름 </label>
+                            <input type="text" id = "searchn" name="searchn" />
+                            <button type="submit" onclick="sungjukSearch();alert('정상');">제 출</button>
+                    </div>
+                </form>
+                
+                <script>
+                    function sungjukSearch() {                
+                        var sname = document.getElementById("searchn").value;
+                        var students;
+                        for (var i=0; i< school.length; i++){
+                            var obj = school[i]; // student in school array 
+                            if(obj['name'] === sname){  // ==address, ===value
+                                students = obj
+                            }
+                        }
+                        var data = "이름:" + students.name + "수학:" + students.mat;
+                        document.getElementById("sungjuckprint").innerHTML = data;
+                        console.log(data);
+                    }
+                </script>
+                <div id="sungjuckprint"></div>
+            </div>
+
+
+
+            <div id="section4" class="container-fluid">
+            <h1>Table 4</h1>
+            <pre>이미지를 2x2 배열로 하여 자기 소개하시요.</pre> 
+                <table>
+                    <tr>
+                        <td>
+                            <div class="col-sm-4">
+                                <img src="은우7.jpg" width="120" height="120">
+                                <p>Friday</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-sm-4">
+                                <img src="image5.gif"  width="120" height="120">
+                                <p>Saturday</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="col-sm-4">
+                                <img src="image4.jpg" width="120" height="120">
+                                <p>Sunday</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-sm-4">
+                                <img src="image3.jpg" width="120" height="120">
+                                <p>Tuesday</p>
+                            </div>
+                        </td>
+                    </tr>
+            </table>
+            </div>
+
+
+            <div id="section5" class="container-fluid">
+	      	<h1>Exam5</h1>
+		      <pre>(5) 다섯번째 페이지 : 오늘 배운 javascript를 정리하여 출력하도록 하시요.</pre>
+		      <ul>
+			      <li> Object Base Programming : Object - key data형식으로 작성(map 다루듯이) </li>
+			      <li> Form Base Programming : 서버 측과 통신용으로 준비된 form </li>
+			      <li> Event Base Programming : GUI  </li>
+		      </ul>
+		   </div>
+
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+	<!-- Resource를 등록하여 웹에서 JNDI로 호출할 이름과 정보를 설정한다. -->
+	<Resource name="jdbc/oraconn" auth="Container" type="javax.sql.DataSource"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		driverClassName="oracle.jdbc.OracleDriver"		
+		url="jdbc:oracle:thin:@localhost:1521:xe"
+		username="c##scott3" password="owo0224662603"
+		maxActive="20" maxIdle="10" maxWait="100"
+		removeAbandoned="true" removeAbandonedTimeout="60"
+		connectionPoolName="oraconn_pool"
+	/>  <!-- ms 타임 -->
+	<Resource name="jdbc/myconn" auth="Container" type="javax.sql.DataSource"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"		
+		driverClassName="oracle.mariadb.jdbc.OracleDriver"		
+		url="jdbc:mariadb://192.168.0.173:3306/acorn?autoReconnect=true"		
+		username="root" password="owo2466"		
+		maxActive="100" maxIdle="30" maxWait="10000"
+		removeAbandoned="true" removeAbandonedTimeout="60">
+	</Resource>
+</Context>

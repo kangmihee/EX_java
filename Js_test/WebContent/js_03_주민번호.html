@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		jumin = prompt("주민등록 번호를 입력 (-없이)", "1234567890123");
+		document.write("<b>입력된 주민번호 : " + jumin + "<br>");
+		chk = "4564512378";
+		sum = 0;
+		for(i=0;i<12;i++)
+			sum = sum + (jumin.charAt(i) * chk.charAt(i)); // 제곱
+		check = sum % 11;
+		check = 11 - check; // 11로 나눈결과를 11빼줌
+		if(check >= 10) check -= 10;
+		if(check == parseInt(jumin.charAt(12)))
+			document.write("결과 : 맞는 번호");
+		else
+			document.write("결과 : 틀린 번호");
+	</script>
+
+</body>
+</html>

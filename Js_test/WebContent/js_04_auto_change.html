@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="daum으로 가기" onclick="move(1)"/>&nbsp;
+	<input type="button" value="새로고침" onclick="move(2)"/>&nbsp;
+	<input type="button" value="naver로 가기" onclick="move(3)"/>&nbsp;
+	
+	<script>
+		Back = new Array("은우4.jpg", "은우5.jpg", "은우6.jpg");
+		// Math.random()의 값의 범위 0~1 사이값
+		// Math는 static을 이용해 만들어 진 객체
+		console.log(location.href); 
+		console.log(location.port);
+		console.log(location.host);
+		index = Math.floor(Math.random()*3); // 내림
+		document.write("<body background=" + Back[index] + ">");
+		document.write("<b>접속할 대마다 랜덤으로 이미지 출력......!</b>");
+		document.write("웹 브라우저에서 새로고침 해보세요.");
+		// host, hostname, href, port, protocal
+		
+		function move(a) {
+			switch(a){ // 브라우저의 위치 정보
+			case 1 : location.href = "http://www.daum.net"; break;
+			case 2 : location.reload(); break;
+			case 3 : location.replace("http://www.naver.com"); break;
+			}
+		}
+			
+	</script>
+</body>
+</html>

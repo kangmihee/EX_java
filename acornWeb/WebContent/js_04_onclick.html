@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 컴포넌트의 텍스트에 html태그를 출력하는 것이 가능
+function showcommentForm() {
+	// 문자열인 경운 Enter를 사용하면 잘못된 문자열이 만들어 져서 에러발생(한줄로 만들어준다)
+	var data = "Name: <br> <input type='text' name='name'> <br> Comment: <br> <textarea rows='5' cols='50'></textarea> <br> <input rtpe='submit' value='comment'>";
+		document.getElementById('myLocation').innerHTML = data;
+}
+</script>
+</head>
+<body>
+	<form name="myForm">
+		<input type="button" value="comment" onclick="showcommentForm()">
+	</form>
+	<div id="myLocation"></div>
+</body>
+</html>

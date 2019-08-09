@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		var f = function() { // 일반함수
+		window.alter("함수테스트");
+		};
+		
+		var f2 = f; // 같은 주소를 가리킴
+		
+		var myFamily={// objext함수
+			name: "만세";
+			print:function(){
+				window.alter("만세 운동법");
+			}
+		};
+		
+		function NUMsum(){
+			var num1 = parseInt(document.getElementById('in_num1').value);
+			var num2 = parseInt(document.getElementById('in_num2').value);
+			var numsum = printSum(num1, num2);
+			console.log("numsum:" + numsum);
+			document.getElementById('out_num').value = numsum;
+		}
+		
+		function calcSum(in_num1, in_num2) { 
+			var result = in_num1 + in_num2;
+			console.log("result:" + result);
+			return result;
+		}
+		
+		// 자바스크립트는 데이터타입을 지정하지 않음 : 데이터타입은 프로그래머의 책임
+		// 자바크스립트에서는 함수정의시 블록문 뒤에 문장종료 필요
+		// 자바스크립트에의 함수는 반드시 값을 리턴해야한다.
+		// component에서 입력되는 데이터 : 텍스트 undefined가 리턴됨
+		// return이 undefined 이기 때문에 수식내엣 사용하면 에러
+		// 문제 : 두 수를 입력받고 결과를 합하여 consol.log에 출력하는 함수 작성
+	</script>
+</head>
+<body>
+	<button onclick="console.log(999)">눌러보셈</button>
+	<button onclick="f()">alter출력</button>
+	<button onclick="f2()">대입 함수 출력</button>
+	<button onclick="myFamily.print()">이름 출력</button>
+	<button onclick="printSum(10,20)">두 수 합계 출력</button>
+	<br><br>
+	<form name="myForm">
+		<div class="form-group">
+				<label for="in_num1">첫번째 숫자</label>
+				<input type="text" id = "in_num1">
+		</div>
+		<div class="form-group">
+			<label for="in_num2">두번째 숫자</label>
+			<input type="text" id = "in_num2">
+		</div>
+		<div class="form-group">
+			<label for="in_button">계산 버튼</label>
+			<input id="in_button" type="button" value="계산" onclick="NUMsum();alert('계산완료')">
+		</div>
+		<div class="form-group">
+			<label for="out_num">계산 결과</label>
+			<input type="text" id = "out_num">
+		</div>
+	</form>
+</body>
+</html>
+<!-- 문제 (input tag3개를 이용해서 입력된 두수의 결과를 마지막input tag로 출력) -->
+<!-- 함수를 이용하여 해결하시오 -->
+
+
+
+
+
+
+
+
+

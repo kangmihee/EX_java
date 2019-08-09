@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var isEven = function (x) { // 짝수인가
+			return (x % 2) === 0;
+		}
+		console.log( [2,22,36].every(isEven) ); // 모두가 조건에 맞는지
+	/* 	console.log( [6,19,18].every(isEven) );
+		console.log( [5,19,17].every(isEven) ); */
+		console.log( [2,22,36].some(isEven) ); // 조건에 맞는 것이 하나라도 있으면
+		
+		var x = ['a','b','c','d','e','f'];
+		for(var entry of x.entries()){
+			console.dir(entry);
+		}
+		var entries = x.entries(); // 이터레이터 획득
+		
+		console.log(x.length);
+		console.dir(entries.next());
+		console.dir(entries.next());
+		console.dir(entries.next());
+		
+		console.log(x.copyWithin(0,3);
+		console.log(x.length);
+		
+		var numbers = [1,2,4,5,7,9,12];
+		console.log(numbers.filter(isEven));
+		
+		console.log(x.find(function (item) { // 값으로 출력
+			return item.length > 1;
+		}));
+		console.log(x.findIndex(function (item) { // 인덱스로 출력
+			return item.length > 1;
+		}));
+		
+		// foreach문의 callback 함수형식 (매개변수 함수)
+		//  이벤트에서도 콜백 함수 ==> 리스너를 달면
+		// callback(item : Object, index : number, array : Array)
+		var x = ['a','b','c'];
+		x.forEach(function (item, index) {
+			console.log('item at ' + index + '=' + item);
+		});
+		console.log(x.includes('b')); // true/false
+		console.log(x.indexOf('b')); // 인덱스 출력
+		console.log(x.join(' -- '));
+		
+		for (var key of x.keys()) { // for of 문 : 이터레이터
+			console.dir(key);
+		}
+		var keys = x.keys(); // 이터레이터 획득
+		
+	/*	console.dir(key.next();
+		console.dir(key.next()); */
+		
+		// map(value), foreach() : callback 함수 형식이 다름
+		var numbers = [1,2,3,4];
+		var squares = numbers.map(function (x) {
+			return x*x; 
+		});
+	/* 	console.log(squares);
+		console.log(numbers.pop());
+		console.log(numbers.push(10,20)));
+		console.log(x); */
+		
+		// reduce는 2개의 매개변수를 받음
+		var join = function (prev, cur) {
+			return prev+cur;
+		}
+		/* console.log(['b','c'].reduce(join, 'a')); // 누적합ab => abc
+		console.log(['b','c'].reduceRight(join, 'a')); // 오른쪽부터
+		console.log(['b','c'].reverse());
+		console.log(['b','c'].shift()); // 0번째 것을 remove
+		 */
+		 // 정렬
+		 var x = [52,7,14,22,9];
+		console.log(x.sort()); // 오름차순
+		console.log(x); // 오름차순
+		var numbericComparison = function (x,y) {
+			return x - y;
+		};
+		console.log(x.sort(numbericComparison)); // 내림차순
+/* 		console.log(x.splice(2,1)); // 앞에 데이터 추가
+		console.log(x); */
+		
+		console.log(Array.from('foo'));
+		var mapFunction = function (values) {
+			return value.toUpperCase();
+		};
+		console.log(Array.from('foo', mapFunction));
+		
+		// 배열 확인함수
+		console.log(Array.isArray([]));
+		console.log(Array.isArray({}));
+		console.log(Array.isArray(53));
+		
+		
+		// 배열 선언 방법
+		var w = ['a','b','c'];
+		var x = Array('a','b','c');
+		var y = new Array('a','b','c');
+		car z = Array.of('a','b','c');
+
+	</script>
+</body>
+</html>

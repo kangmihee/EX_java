@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 1일차 : html : tag중심 -> contents표현 -->
+<!-- 2일차 : CSS3 : font, color, layout -> 모양 -->
+<!-- 3일차 : Javascript : tag나 css style을 얻어서 : 동적 효과를 줌 -->
+<!-- 4일차 : 성적프로그래밍 -->
+<!-- 5일차 : 자료구조와 함수적 프로그래밍 -->
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<script>
+	// 문자열 + 
+	var text = '{"name" : "맘대로" , "street" : "서울시 종로구" , "phone" : "010-1234-5678"}';
+	vat obj = JSON.parse(text); // 문자열 -> Object
+	document.getElementById("demo").immerHTML = obj.name + "<br>" + obj.street + "<br>" + obj.phone;
+</script>
+
+
+</body>
+</html>

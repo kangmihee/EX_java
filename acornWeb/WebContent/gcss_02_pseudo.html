@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+input:hover { background-color: #ffff00; }
+
+a:visited { color: #00ffff; }
+
+p:first-letter {font: 40pt Arial; }
+
+#s1:first-line { color: blue; }
+
+#s2:active { background-color: #DDDDDD;  /* active는 누르고 있을 때 속성 */
+ 			 font-size: 150%; }
+</style>
+</head>
+<body>
+	<header>
+		<div>
+			<ul>
+				<li><a href=#test1>test1</a></li>
+				<li><a href=#test2>test2</a></li>
+			</ul>
+			<p id=s1>pseudo class selector 실험 
+				:first-line 선택자를 이용하면 문장의 첫 번째
+				문장을 선택 가능</p>
+			<p id=s2>이곳을 클릭하면 뒷배경의 색이 바뀌고 
+				폰트가 커지는 것을 볼 수 있습니다.</p>
+			<input type=text></input>
+		</div>
+	</header>
+</body>
+</html>

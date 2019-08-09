@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		myFunction(); // 초기에 실행
+			function myFunction() {
+				carName="소나타"; // 지역변수...var를 지정하지 않으면 암뭄적 전역변수이다
+			}
+			function person(first, last, age, eye) {
+				this.firstName = first; // 키이데이터 형식으로 값을 추가
+				this.address = last;
+				this.agr = age;
+				this.eyeColor = eye;
+			}
+			// 함수를 인스턴스
+			var myFather = new person("서울남", "서울시 종로구", "50", "blue");
+			var myMather = new person("메로나", "제주도 감귤", "48", "gree");
+	</script>
+</body>
+<!-- 윈도우 함수 : 선언없이 사용하는 함수, Date(), alert(), prompt() -->
+	<p id = "demo"></p>
+	<button onclick="document.getElementById('demo').innerHTML=Date()">시간은?</button>
+	<button onclick="document.getElementById('demo').innerHTML='I can display' + carName">전역변수?</button>
+	<button onclick="document.getElementById('demo').innerHTML='I can display'+myFather.firstName">객체의내용?</button>
+	
+</html>

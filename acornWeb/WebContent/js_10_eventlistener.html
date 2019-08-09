@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	
+		.draw{
+			width: 400px;
+			height: 200px;
+			margin: 20px;
+			text-align: center;
+			border: 1px solid red;
+			background-color: lightgray;
+			} 
+			
+		p{background-color: white;}
+		
+	</style>
+</head>
+<body>
+
+	 
+	<div class="draw" id="one">출력1</div>
+	<div class="draw" id="two">출력2</div>
+	<div class="draw" id="three" onmousemove="myMoveFunction()">
+		<p>onmousemove: <br> <span id="demo">Mouse move me!</span></p>
+	</div>
+	<div class="draw" id="three" onmouseenter="myEnterFunction()">
+		<p>onmouseenter: <br> <span id="demo2">Mouse over me!</span></p>
+	</div> 
+
+	<script>
+		var x = 0; // 스크립트 로딩하면서 초기화됨
+		var z = 0;
+
+		function myMoveFunction() { document.getElementById("demo").innerHTML = z+=1; }
+		function myEnterFunction(){ document.getElementById("demo2").innerHTML = x+=1; }
+	
+	    document.querySelector("#one") <!-- 첫번째 객체 리턴 -->
+	    .addEventListener("click", function() {
+	      console.log(this); <!-- this는 선택된 객체가 this이다. -->
+	      this.innerText="클릭이벤트 리스너에서 출력!";
+	    });
+	    document.querySelector("#two")
+	    .addEventListener("mouseover", function() {
+	      console.log(this);
+	      this.innerText="마우스 오버 이벤트 리스너에서 출력?";
+	    });
+	    document.querySelector("#two")
+	    .addEventListener("mouseout", function() {
+	      console.log(this);
+	      this.innerText="마우스 아웃 이벤트 리스너에서 출력?";
+	    });	
+	</script>
+</body>
+</html>
+
+

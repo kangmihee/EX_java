@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- 그룹핑에서 모양변경 -->
+	<style>
+		.selected {color:red;}
+	</style>
+	<script>
+		$(document).ready(function () { // first, last, eq, lt, gt
+			
+			$("li").eq(2).addClass("selected"); // 그룹선택한 것 중에서 순서대로
+		 // addClass(속상추가), removeClass(속성제거), hasClass
+		
+		// 문제: 버튼을 추가하고 버튼을 click 할 때 부여된 속성을 제거하시오
+			$("#button").click(function () { 
+				$("li").eq(2).removeClass("selected");	
+			});	
+			
+		});
+		
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+			<li>list item 5</li>
+			<li>list item 6</li>
+		</ul>
+		<button id="button">속성제거</button>
+	</div>
+
+</body>
+</html>

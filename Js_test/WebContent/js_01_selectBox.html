@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 이벤트를 설치하는 방법 태그 안에서 onChange를 구현, 스크립트 addEventListener -->
+	<select name="selectBox" id = "selectBox">
+		<option value="대한">대한</option>
+		<option value="민국" selected>민국</option>
+		<option value="만세">만세</option>
+	</select>
+
+	<script type="text/javascript">
+	//  변화시 이벤트 발생 change
+		var target = document.getElementById("selectBox");
+		alert('선택된 옵션 text 값=' + target.options[target.selectedIndex].text);
+		alert('선택된 옵션 value 값=' + target.options[target.selectedIndex].value);
+		
+		document.querySelector("#selectBox")
+		.addEventListener("change", function(){
+			console.log(this);
+			alert('선택된 옵션 value 값=' + target.options[target.selectedIndex].text);		
+		});
+		
+	</script>
+
+</body>
+</html>

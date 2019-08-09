@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+
+	function exfunction() {
+		var a = parseInt(document.getElementById('indata').value);
+		var data;
+		if(a%2==0)
+			{document.write("a는 even입니다.");}
+		else{docment.write("a는 odd입니다.");}	
+		document.getElementById('result').innerHTML = data;
+	}
+		// 문제1) input에 데이터를 받고 button을 누르면 id result에 결과가 출력되도록 하시오
+	</script>
+</head>
+
+<body>
+	<form>
+		<input type="text" id="indata">
+		<input type="button" value="result" onclick="exfunction();alert('계산완료')">
+	</form>
+	<br>
+	<div id="result"></div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	function exfunction() {
+		var height = parseInt(document.getElementById('indata').value);
+		var data;
+		if(height>170)
+			{data = "키가 큽니다.";}
+		else if(height==170){data = "보통입니다.";}	
+		else {data = "키가 작습니다.";}
+		document.getElementById('result').innerHTML = data;
+	}
+		// 문제2) 키를 입력받아서 170을 기준으로 170이면 보통. 
+	 	//        작으면 작습니다. 크면 큽니다.          라는 메세지를 출력하시오
+	</script>
+</head>
+<body>
+	<form name="myForm" class="form-inLine"> <!-- form-inLine은 수평으로 배치 -->
+		<div class="form-group">
+			<label for = "indata">키를 입력하시오</label>
+			<input type="text" id="indata">
+		</div>
+		<div class="form-group">
+			<label>키 입력결과</label>
+			<input for= "result" type="button" value="결과출력" onclick="exfunction();alert('완료')">
+		</div>
+	<br><br>
+	</form>
+	<br>
+	<div id="result"></div>
+</body>
+</html>                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

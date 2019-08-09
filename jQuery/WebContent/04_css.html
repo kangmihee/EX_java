@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>css()함수를 이용한style속성 제어</title>
+	<style>
+		div{ width: 60px; height: 60px; }
+	</style>
+	<script>
+		$(document).ready(function () {
+			$("#button1").click(function () { // css 함수 오버로딩 : 매개변수 상이
+				var color = $("#div1").css("background-color");
+				$("#result").text("background-color: " + color);
+			});
+			$("#button2").click(function () { 
+				$("#div1").css("background-color", "red"); // 속성 값 setting
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="div1" style="background-color: blue;"></div>
+	<button id="button1">css(element)값 획득</button>
+	<button id="button2">css(element,style)값 획득</button>
+	<p id="result">여기에 결과가 표시됩니다.</p>
+</body>
+</html>
+

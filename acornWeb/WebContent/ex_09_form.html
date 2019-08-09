@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- form base programming -->
+	<form action="LoginAction">
+		<table>
+			<tr>
+				<td><label for="email">이메일</label></td>
+				<td><input type="text" id="email" name="email" /></td>
+			</tr>
+			<tr>
+				<td><label for="pwd">비밀번호</label></td>
+				<td><input type="password" id="pwd" name="pwd" /></td>
+			</tr>
+			<tr>
+				<td><label for="job">직업 선택<br /></label></td>
+				<td><select name="job" id="job">
+						<option value="">선택</option>
+						<option value="teacher">선생님</option>
+						<option value="doctor">의사</option>
+						<option value="programmer">프로그래머</option>
+						<option value="ect">기타</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="pic">첨부파일(사진)</label></td>
+				<td><input type="file" id="pic" name="pic"></td>
+			</tr>
+
+			<tr>
+				<td><label for="comment">하고 싶은 말</label></td>
+				<td><textarea name="comment" id="comment" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td><button type="submit">로그인</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+	/* BOM(window(최상위라생략가능), document, history, creen, navigator, location)
+	   DOM(document object model):document/ 밑으로 achor, form, link */
+	/* 속성하고 함수 존재 */
+	document.getElementById("demo").innerHTML = 5+6; /* getElementById또는getElementByName로 찾기 */
+ 	document.writs(5+6);
+	window.alert(5+6); /* 경고창으로 결과출력*/
+	console.log(5+6);  /* 브라우저에서 확인_에러를 출력할 때*/
+</script>
+</head>
+<!-- tag는 id(중복불가_오브젝트구분)와 name(중복가능_체크박스)을 갖게됨 -->
+<!-- HTML5 + CSS3 + JAVASCRITP -->
+<!-- GUI : Event base programming, Event:윈도우통합관리 event handler-->
+<body>
+	<h1>자바스크립트에서 출력하는 대상 : browser, log, component, dialog</h1>
+	<p id="demo">내용출력</p> <!-- .innerHTML = 5+6 출력 -->
+	<button type="button" onclick="document.write(5+6)">Try it</button>
+</body>
+</html>

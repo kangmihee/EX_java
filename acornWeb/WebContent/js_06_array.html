@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		var nums = [10,20,30]; // 자바 모두 객체= 멤버변수 + 멤버함수
+		var names = ['대한', '민국', '만세'];
+		console.log(nums[0]);
+		var a = nums[0];
+		names[2] = "발전";
+		names.splice(2,1); //concat, join, pop, push, sort 등등 함수
+		names.push("덩어리");
+		
+		var size = names.length;
+		for (i=0; i<names.length; i++){ // c의 반복문과 같음(초기값,한계값,증감값)
+			// 자바스트립트도 문자열 결합 연산자는+, 거의 자바에 비슷한 것 같지만 또 문법은 다름
+			document.write(names[i] + "<br/>");
+		}
+		
+		var result = names.join('-');
+		document.write(result);
+		
+		result = nums.find(x => x > 20); // =>는 lamda함수이다, find함수의 매개변수는 함수(function은복잡함)
+		document.weite(result);
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블에 이미지 삽입</title>
+<style>
+	table {border-collapse: collapse;} /* 표의테두리와 셀의 테두리사이의 간격처리 */
+	th, td {border: 1px solid black;}  /* 검은색 실선을 1px로 준다..개별적지정이 우선*/
+</style>
+
+</head>
+<body>
+	<table border="10" borgercolor="green" cellpadding="20"
+		cellspacing="10" width="300" height="200" bgcolor="magebta">
+		<tr>
+			<td align="center" valign="center" background="B2.GIF"><img
+				src="HI.GIF" width="200" height="150" border="3"></td>
+			<td align="center" valign="center" background="B2.GIF"><img
+				src="은우.gif" width="200" height="150" border="3"></td>
+		</tr>
+		<tr>
+			<td align="center" valign="center" background="B2.GIF"><img
+				src="은우.gif" width="200" height="150" border="3"></td>
+			<td align="center" valign="center" background="B2.GIF"><img
+				src="HI.GIF" width="200" height="150" border="3"></td>
+		</tr>
+	</table>
+	<hr>
+	<!--  수평선 horizontal -->
+	<table border="2" width="400" borgercolor="#ff00ff" cellspacing="0">
+		<tr align="center">
+			<td>&nbsp;</td>
+			<td width="300">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr align="center">
+			<td>&nbsp;</td>
+			<td>
+				<table border="2" width="300" collspacing="0">
+					<tr align="center">
+						<td>안쪽 표1</td>
+						<td>안쪽 표2</td>
+					</tr>
+					<tr align="center">
+						<td>안쪽 표3</td>
+						<td>안쪽 표4</td>
+					</tr>
+					<tr align="center">
+						<td>안쪽 표5</td>
+						<td>안쪽 표6</td>
+					</tr>
+				</table>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr align="center">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<!-- rowspan, colspan(열합침) -->
+	<table>
+		<tr>
+			<td>분류</td>
+			<td>항목</td>
+		</tr>
+		<tr>
+			<td rowspan="3">과일</td> <!-- 3행 합침-->
+			<td>사과</td>
+		<tr>
+			<td>바나나</td>
+		</tr>
+		<tr>
+			<td>파인애플</td>
+		</tr>
+		<tr>
+			<td rowspan="3">채소</td> <!-- 2행 합침-->
+			<td>무</td>
+		</tr>
+		<tr>
+			<td>배추</td>
+		</tr>
+	</table>
+	<table border="1" bgcolor="green" width="600" height="400"
+		   align="center" bordercolor="blue" cellspacing="0">
+		<tr height="100"> 
+			<td colspan="2">&nbsp;</td>
+			<td colspan="2">&nbsp;</td>
+			<td width="100">&nbsp;</td>
+			<td width="100">&nbsp;</td>		
+		</tr>
+		<tr height="100">
+			<td colspan="4">&nbsp;</td>
+			<td colspan="2">&nbsp;</td>
+			
+		</tr>
+		<tr height="100">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100">&nbsp;</td>
+			<td width="100">&nbsp;</td>
+			<td width="100">&nbsp;</td>
+			<td width="100">&nbsp;</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var numbers = [80, 80, 90];
+	var sungjuk = [[80, 80, 90],[75,85,95],[96,86,76]];
+	
+	// forEach문의 매개변수는 값, 그값의 인덱스, 배열자체
+	function jumsumilti(item, index, arr) {
+		// 원본에 영향을 미치기 위해서는 계산 후 다시 입력 해야 함
+		arr[index] = item * document.getElementById("miltiplyWidth").value;
+		demo1.innerHTML = numbers;
+	}
+
+	function jumsusum2(item, index, arr) {
+		// 함수적 프로그래밍은 리턴하지 않기 때문에 작업 불가
+		// 직접2차원으로 처리하는 것은 불가능 배열처리가 있어야 함
+		arr[index] = item.forEach(jumsusum3);
+		demo2.innerHTML = sungjuk;
+		console.log("1차원배열 값" + arr[index]);
+		console.log("1차 아이템" + item);
+	}
+	function jumsusum3(item, index, arr) {
+		arr[index] = item + 5;
+		console.log("2차원배열 값" + arr[index]);
+		console.log("2차 아이템" + item);
+	}
+	// 2차원 배열에 forEach문을 실행하는 방법에 대하여
+	
+</script>
+</head>
+<body>
+	<!-- var sungjuk = [ [80,80,90],[75,85,95],[96,86,76] ]; -->
+	<!-- 각 점수5점씩 더하는 회로를 구성하시오 -->
+	
+	<p>곱할 수<input type="number" id="miltiplyWidth" value="10"></p>
+	<button onclick="numbers.forEach(jumsumilti)">Try it</button>
+	<p>갱신된 배열 : <span id = "demo1"></span></p>
+	<br>
+	<p>더할 수<input type="number"  value="5"></p>
+	<button onclick="sungjuk.forEach(jumsusum2)">Try it</button>
+	<p>갱신된 배열 : <span id = "demo2"></span></p>
+</body>
+</html>

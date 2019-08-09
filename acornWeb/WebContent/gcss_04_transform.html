@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#snow1 {
+	transform: rotate(300deg) scale(0.5, 0.5); /* 원래사이즈의 반으로 줄이는것(0.5) */
+	-webkit-transform: rotate(300deg) scale(0.5, 0.5); 
+	-moz-transform: rotate(300deg) scale(0.5, 0.5);
+}
+
+#snow2 {
+	transform: skew(100deg, 10deg); /* radian:3.141592 = degree:(180) */
+	-webkit-transform: skew(100deg, 10deg); /* skew는 기울어지게 표현 */
+	-moz-transform: skew(100deg, 10deg); 
+}
+
+#sky {
+	position: absolute; /* position -> relative, absolute(절대좌표) */
+	left: 30px;
+	transform: transLate(200px, 100px); /* 브라우저 호환성 */
+	-webkit-transform: transLate(200px, 100px); /* 사파리 */
+	-moz-transform: transLate(200px, 100px); /* (모자르다)표준화 되어있지 않고 브라우저별로 명령어가 다른 경우가 있음 */
+	opacity: 0.5;
+}
+</style>
+</head>
+<body>
+	<!-- 이미지 변형 : MRS(move, rotate, scale): 선형으로 공간 변형
+		 translate(x,y,z), translate3D(x,y,z), rotate(), rotate3D, scaleX, scale3D
+		 html5에서 canvas를 지원해서 마치 그래픽 화면처럼 활용-->
+	<header>
+		<h1>CSS3 transform(이미지 변형)</h1>
+	</header>
+	<div id="attr1">
+		<img id=sky src=sky.jpg> 
+		<img id=snow1 src=snow.jpg> 
+		<img id=snow2 src=snow.jpg>
+	</div>
+</body>
+</html>

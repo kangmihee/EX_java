@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<title>Insert title here</title>
+<script>
+// jQuery로 출력 이벤트 작성하기
+	$(document).ready(function () {
+		
+		$("#btn1").on("click",function (e) {
+			$("#test1").text("안녕하세요");	
+		});
+		
+		$("#btn2").on("click",function () {	
+			$("#test2").html("<b>안녕하세요</b>");	
+		});	
+		$("#btn3").on("click",function () {
+			$("#test3").val("강미희");	
+		});
+		$("#btn4").on("click",function () {
+			alert($("input").val());
+			alert($("p").text());
+			alert($("p").html());
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+	Name: <input type="text" id="test3" value="대한민국">
+	<p id = "test1">This is a paragraph</p>
+	<p id = "test2">This is another paragraph</p>
+	<p>This is some<b>bold</b>and<i>italic</i>text.</p>
+	<button id="btn1">문자열</button>  <!-- test1의 문장 "안녕하세요"로 변경 -->
+	<button id="btn2">HTML로 세팅하기</button>  <!-- test2 bold로 안녕하세요 -->
+	<button id="btn3">값 저장하기</button>  <!-- 입력테스트를 "변경된 이름" -->
+	<button id="btn4">값 확인하기</button>  <!-- test1,2 텍스트를 alert로 출력 -->	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

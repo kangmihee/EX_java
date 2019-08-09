@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>네이버 회원가입 폼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+        body {font-size: 10px;}
+        input {
+				width:400px;
+				padding:10px;
+				border-radius:5px;
+				border:1px solid #cbcbcb;
+				font-size:10px
+				}
+		select{ width:400px;
+				padding:10px;
+				border-radius:5px;
+				border:1px solid #cbcbcb;
+				font-size:10px;
+				}
+		option{
+				width:400px;
+				padding:10px;
+				border-radius:5px;
+				border:1px solid #cbcbcb;
+				font-size:10px;
+				}
+		.naverForm{text-align:center;}
+	</style> 
+</head>
+<body>
+<div class="naverForm">
+	<form>
+		<label style="color: green; font-size: 50px;">NAVER</label><p>
+		<label >아이디<p>
+		<input type="text" name="id"><p>
+		비밀번호<p>
+		<input type="password" name="password"><p>
+		비밀번호 재확인<p>
+		<input type="password" name="pswcheck"><p>
+		이름<p>
+		<input type="text" name="name"><p>
+		생년월일<p>
+		<input type="number" name="year" placeholder="년(4자)" style="width:150px;">
+		<select name="month" style="width:100px;">
+			  <option value="month">월</option>
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+			  <option value="6">6</option>
+			  <option value="7">7</option>
+			  <option value="8">8</option>
+			  <option value="9">9</option>
+			  <option value="10">10</option>
+			  <option value="11">11</option>
+			  <option value="12">12</option>	
+		</select>
+		<input type="number" name="day" placeholder="일" style="width:150px; va"><p>
+		성별<p>
+		<select name="gender" style="width:400px;">
+			  <option value="gender">성별</option>
+			  <option value="man">남자</option>
+			  <option value="woman">여자</option>
+		</select><p>
+		본인 확인 이메일(선택)<p>
+		<input type="text" name="email" placeholder="선택입력"><p>
+		휴대전화<p>
+		<select name="phone1" style="width:400px;">
+			<option value="82">대한민국 +82</option>
+			<option value="61">호주 +861</option>
+			<option value="84">베트남 +84</option>
+			<option value="46">스웨덴 +46</option>
+			<option value="65">싱가포르 +65</option>
+			<option value="44">영국 +44</option>
+			<option value="39">이탈리아 +39</option>
+			<option value="886">타이완 +886</option>
+			
+		</select><p>
+		<input type="number" name="phone2" placeholder="전화번호 입력" style="width:300px;" >
+		<input type="button" name="checkbutton" value="인증번호 받기" style="width:100px; background-color: green; color: white;"><p>
+		<input type="number" name="checknum" placeholder="인증번호 입력하세요"><p>
+		<input type="button" value="결과확인"  style="background-color: green; color: white;"><p>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+.wrapper {
+	perspective: 500px; /* 투영3차원 */
+	perspective-origin: 50% 50%; /* 이미지의 중심에서 */
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.target {
+	transform-style: preserve-3d;
+	transform-origin: 50% 50%;
+	position: relative; 
+	transition: transform 1.4s ease-out; /* ease-out:부드럽게 돌아가라 */
+}
+
+.target>div {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	border: 1px solid green;
+	/* 뒷면이 보이게 할지 여부 */
+	backface-visibility: hidden; /* 투영:투명도 */
+}
+
+.front {
+	background-image: url("images/image1.png");
+}
+
+.back {
+	background-image: url("images/image2.png");
+	transform: rotateY(180deg); /* rotateY(180deg):반대방향 */
+}
+
+.target:hover { /* .target:hover:타겟에 마우스가 올라갔을 때 */
+	transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="target">
+			<div class="front"></div>
+			<div class="back"></div>
+		</div>
+	</div>
+</body>
+</html>

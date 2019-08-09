@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function calcdata() { // 송수신데이터
+			var in_num11 = parseInt(document.getElementById('in_num11').value);
+			var in_num22 = parseInt(document.getElementById('in_num22').value);
+			var out_num = calcSum(in_num11, in_num22);
+			console.log("out_num:" + out_num); // 디버깅GUI방식
+			document.getElementById("out_num").value = out_num;
+			
+		}
+		function calcSum(in_num11, in_num22) { // 계산함수
+			var result = in_num11 + in_num22;
+			console.log("result:" + result);
+			return result;
+		}
+		
+	</script> 
+</head>
+<body>
+	<form name="myForm">
+		<div class="form-group">
+				<label for="in_num11">첫번째 숫자</label>
+				<input type="text" id = "in_num11">
+		</div>
+		<div class="form-group">
+			<label for="in_num22">두번째 숫자</label>
+			<input type="text" id = "in_num22">
+		</div>
+		<div class="form-group">
+			<label for="in_button">계산 버튼</label>
+			<input id="in_button" type="button" value="계산" onclick="calcdata();alert('계산완료')">
+		</div>
+		<div class="form-group">
+			<label for="out_num">계산 결과</label>
+			<input type="text" id = "out_num">
+		</div>
+	</form>
+</body>
+</html>

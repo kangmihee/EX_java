@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+input:nth-last-of-type(2) {  /* input은 form태그 */
+	border: 2px solid red;
+	margin: 10px;
+}
+
+p:nth-child(odd) { /* odd:홀수, even:짝수 ...여러개 제어가능*/
+	background: #00AAAA;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>CSS3 선택자 (가상클래스)</h1>
+		<div class="stylesheet">
+			이름: <input id=name type=text></input></br>
+			아이디: <input id=ident type=text></input></br>
+			전화번호: <input id=phone type=text></input></br>
+		</div>
+		<p>구조적 가상 클래스 선택자는 다양한 방식으로 구조화 된 페이지에서 특정 요소를 선택가능</p>
+		<p>이 중:nth-of-type(n)는 동일 유형 중 n번째 요소를 선택하는 의미</p>
+		<p>:nth-child(n)의 경우에는 n번재 하위 요소를 의미한다. 여기서 n값은 even, odd로 짝 홀수
+			번째의 요소를 선택가능</p>
+		<p>2n, 2n+1 과 같이 수식으로 짝홀수를 선택가능</p>
+	</header>
+</body>
+</html>

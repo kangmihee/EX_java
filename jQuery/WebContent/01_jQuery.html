@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- CDN(Content delivery network : 네트워크를 통해 실시간으로 배포) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	// 브라우저 BOM(결정구조) & DOM(비결구조 - 생성)
+	// 자바스크립트 : 동적효과
+	// jQuery(seletor) : 아이디, 이름, 태그, 그룹을 선택(배열리스트), 계층적(div span)
+	// tag.클래스 : 클래스별로 선택, 한정자(filter) 순서대로 선택 : first, last
+	// eq(equal)번호, lt(less then), gt(great then)
+	// DOM manipulation
+	</script>
+	<script>
+	// GUI : event base programming : 사건중심의 프로그래밍
+		$(document).ready(function() { // ready는 페이지 로딩준비시의 이벤트
+			
+			$("text").click(function () { // click 이벤트
+				alert($("target1").text()); // 순수한 contents만 획득
+			});
+			$("html").click(function () {
+				alert($("target1").html()); // 태그를 포함한 contents를 획득
+			});
+			$("#text2").click(function() {
+				alert($("target1").val()); // val()는 입력태그에서 입력값을 가지고 올때 사용
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<!-- DOM(Dociument object model)을 구성 : Contents의 표현 -->
+	<p id = "target">이것은<strong>하나의</strong>단락입니다.</p>
+	<button id="text">text()</button>
+	<button id="html">html()</button>
+	
+	이름: <input type="text" id="target1" value=""><br /> 
+	<button id="text2">val()</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

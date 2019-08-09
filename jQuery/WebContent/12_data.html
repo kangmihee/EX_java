@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<title>Insert title here</title>
+<style>
+	div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		float: left; 
+	}
+</style>
+</head>
+<body>
+	<div id="one"></div><div id="two"></div><div id="three"></div>
+	<script>
+
+		$("#one").data("color", "blue"); // 키를 달고 확인해서 별도의 조치를 할때
+		$("#three").data("color", "green"); 
+		// color라는 키를 가지고 있는 것
+		$(":data(color)").each(function () {
+			var element = $(this);
+			// css 세팅
+			element.css("backgroundColor", element.data("color"));
+		});	
+
+	</script>
+</body>
+</html>

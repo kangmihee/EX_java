@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		$("#button1").click(function () { // append 태그에 내용추가
+			$("p").append("<b style='color:red'> 대한민국 </b>.");	
+		});
+		$("#button2").click(function () { // prepend 태그의 contents 내용전개 추가
+			$("p").prepend("<b style='color:red'> 영원히 발전할 </b>.");	
+		});	
+		
+	});
+</script>
+</head>
+<body>
+	<p>당신의 이름은 : </p>
+	<button id="button1">append()</button>
+	<button id="button2">prepend()</button>
+</body>
+</html>

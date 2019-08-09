@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="./base.css">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border-collapse: collapse;
+		border: none;
+	}
+	th,
+	td{
+		border: 1px solid black;
+		padding: 4px 16px;
+		font-size: 24px;
+		text-align: left;
+	}
+	th{
+		background-color: #C8C8C8;
+		cursor: pointer;
+	}
+	fieldset {
+  		border: 2px solid lightgray;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var people, asc1 = 1,
+					asc2 = 1,
+					asc3 = 1;
+		
+		window.onload = function () {
+			people = document.getElementById("people");
+		}
+		function tablesort(tbody, col, asc) {
+		      var rows = tbody.rows, rlen = rows.length; // 전체 바디 부분의 길이 확인
+		      var arr = new Array(), i, j, cells, clen; // 2차원 배열로 데이터를 처리하기 위하여 테이블 2차원 배열
+		      for (i = 0; i < rlen; i++) {
+		         cells = rows[i].cells; // 한 행에 들어 있는 데이터셀을 가지고 옴
+		         clen = cells.length;
+		         arr[i] = new Array();
+		         for (j = 0; j < clen; j++) {
+		            arr[i][j] = cells[j].innerHTML;
+		         }
+			} // 여기까지가 2차원 배열 만들어짐
+		
+			arr.sort(function (a,b) { // a,b로 입장하는 것은 배열, 원하는 열을 중심하고 기준을 주면됨
+				 return (a[col] == b[col]) ? 0
+			               : ((a[col] > b[col]) ? asc : -1 * asc);
+			}); 
+			for (i = 0; i < rlen; i++){ // 배열 => table데이터로 만든 2차원 배열에 있는것을 text로 만들고
+				arr[i] = "<td>" + arr[i].join("</td><td>") + "</td>";
+			}
+			
+			// 객체를 테이블 텍스트로 생성
+			tbody.innerHTML = "<tr>" + arr.join("</tr><tr>") + "</tr>";
+		}  
+	</script>
+	<table>
+		<thead>
+			<tr><th onclick="tablesort(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">Name</th>
+               	<th onclick="tablesort(people, 1, asc1); asc2 *= -1; asc3 = 1; asc1 = 1;">Address</th>
+               	<th onclick="tablesort(people, 2, asc1); asc3 *= -1; asc1 = 1; asc2 = 1;">Age</th>
+            </tr>	
+		</thead>
+		<tbody id="people">
+			<tr>
+				<td>이순신</td><td>서울</td><td>18</td>
+			</tr>
+			<tr>
+				<td>비소리</td><td>강남</td><td>21</td>
+			</tr>
+			<tr>
+				<td>대박인</td><td>부산</td><td>27</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

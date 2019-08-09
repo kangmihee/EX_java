@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+		// 방법1
+		/* function sungjuck() {
+			var in_sungjuck = document.getElementById('in_sungjuck').value;
+			var grade;
+			if(in_sungjuck>=90) {grade = "A";}
+			else if(in_sungjuck>=80)  {grade = "B";}
+			else if(in_sungjuck>=70)  {grade = "C";}
+			else if(in_sungjuck>=60)  {grade = "D";}
+			else       {data = "F";}
+			document.getElementById('out_grade').value = data;
+		} */
+		
+		// 방법2
+			var sungjuck = function() {
+			      var in_num = parseInt(document.getElementById('in_sungjuck').value);
+			      var out_text = dic_grade(in_num);
+			      console.log("out_text : " + out_text); //debugging GUI 방식
+			      document.getElementById('out_grade').value = out_text;
+			 }
+		
+		    var dic_grade = function(jumsu) {
+		    var grade;
+		      if (jumsu >= 90) {grade = "A";} 
+		      else if (jumsu >= 80) {grade = "B";} 
+		      else if (jumsu >= 70) {grade = "C";} 
+		      else if (jumsu >= 60) {grade = "D";} 
+		      else {grade = "F";}
+		      return grade;
+		    }
+		
+		// 방법3
+		/* var dicision_grade = function(){
+			var str = prompt("점수 입력(0~100)"); // GUI입력 => 문자로 입력
+			var jumsu = parseFloat(str);
+			var grade;
+			if(jumsu >= 90){grade="A";}
+			else if(jumsu >= 80){grade="B";}
+			else if(jumsu >= 70){grade="C";}
+			else if(jumsu >= 60){grade="D";}
+			else {grade="F";}
+			return grade;
+		}; */
+			
+	</script> 
+</head>
+<body>
+<!-- 관계연산자는 모든 랭귀지마다 동일 (=,==) -->
+<!-- 문제: input2개, button1개 점수를 입력받고 입력된 점수의 학점을 
+		   2번째 input의 텍스트로 출력하시오(입력점수는 : ?? => grade A) -->
+   <form name="myForm">
+		<div class="form-group">
+				<label for="in_sungjuck">입력 점수</label>
+				<input type="text" id = "in_sungjuck">
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="in_button">계산 버튼</label>
+			<input id="in_button" type="button" value="계산" onclick="sungjuck();alert('계산완료')">
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="out_grade">해당 학점</label>
+			<input type="text" id = "out_grade">
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+<style>
+		.box{
+			background-color: black;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$("#move").click(function () {
+				var div = $("div");
+				div.animate({width: '300px', opacity:'0.4'}, "slow");
+				div.animate({height: '300px', opacity:'0.8'}, "slow");
+				div.animate({height: '100px', opacity:'0.4'}, "slow");
+				div.animate({width: '100px', opacity:'0.8'}, "slow");
+				
+				$("p").css("color", "red").slideUp(2000).slideDown(2000);
+			});
+		});	
+	</script>	
+</head>
+<body>
+	<button id="move">애니메이션을 하려면 클릭</button>
+	<p> static position, 상대좌표절대, 좌표 relative</p>
+	<div style="background-color: #98bf12; height: 100px; width: 100px; position: absolute;"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

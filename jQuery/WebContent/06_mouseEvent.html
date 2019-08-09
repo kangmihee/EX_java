@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+	<style>
+		div.out{ 
+			width: 200px;
+			height: 60px;
+			background-color: yellow;	
+		}
+		body {
+			background-color: #eef;
+		}
+		div {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id ="log"></div>
+	
+	<div class ="out">
+		<p>마우스를 여기로 움직이세요.</p>
+		<p>0</p>
+	</div>
+	<script>
+		var i=0;
+		$(document).ready(function () {
+			$("div.out").mouseover(function () { // 선택자 div의 class 선택
+				$("p:first", this).text("mouse over"); // contents
+				$("P:last", this).text(++i);
+			});
+			$(document).mousemove(function (e) { // e : 이벤트 객체
+				$("#log").text("e.pageX:" + e.pageX + ", e.pageY" + e.pageY);
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

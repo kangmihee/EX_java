@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Cookie : web server : stateless
+	클라이언트에 저장 : 웹서버의 해당 페이지에 들어올때 -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="checkCookie()"> <!-- 페이지가 열릴 때 발생하는 이벤트 -->
+
+	<script>
+	
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date(); // 현재시간 시, 분, 초, 밀리초
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));		
+			// 시간을 문자열로 만듬 : 그리니치 천문 시간
+			// 국제협정시 : 원자시
+			var expires = "expires=" +d.toUTCString();
+			// 저장하는회로, expires 지우는 회로
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		};
+		
+		function getCookie(cname) {
+			var name = cname + "="; // 순수한 value만 필요
+			var ca = document.cookie.split(';');  // 배열
+			for(var i=0; i<ca.length;i++){
+				var c =ca[i];
+				while(c.charAt(0) == ' '){ // 공백제거
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0 ) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		};
+		
+		function checkCookie() { // 키: username,  값: 입력된 것
+			var user = getCookie('username'); // 사용자 이름
+			if (user != "") {
+				alert("재방문을 환영합니다." + user);
+			}else {
+				user = prompt("이름을 입력하세요", "");
+				if(user != "" && user != null) {
+					setCookie("username", user, 30)
+				}
+			}
+		};
+		
+		function deleteCookie(){
+			key = prompt("삭제할 이름을 입력하세요", "");
+			var covalue = getCookie(key);
+			if(covalue != "") {
+				setCookie(key, '', -1)
+				alert("삭제되었습니다.");
+			}
+			else {
+				var ret = confirm("찾고자 하는 키가 없습니다. 등록하시겠습니까?"); // confirm은 리턴값 존재(Y/N)
+				if(ret == true){
+					value = prompt("등록하고자 하는" + key + "의 값을 입력하시요.");
+					if(value != "") {
+						setCookie(key, value, 1);
+					}
+					else {
+						alert("입력된 값이 없습니다.");
+					}
+				}
+				else {
+					alert("해당 키가 없습니다.");
+				}
+			}
+		};
+		
+		function findCookie(){
+			key = prompt("찾고자 하는 키값을 입력하세요", "");
+			var covalue = getCookie(key);
+			if(covalue!=""){
+				var ret = confirm("찾고자 하는 키:" + key + "의 값 : " + covalue + "이 맞습니까?" );
+				if(ret == true) {
+					alert("당신이 찾고자 하는 값 : " + covalue + "입니다.");
+				}else {
+					alert("찾고자 하는 값이 없습니다.");
+				}
+			}else {
+				alert("해당 키가 없습니다.");
+			}
+		};
+		
+	</script>
+	
+	<input type="button" value="쿠키 생성" onclick="setCookie('test', 'cookie 테스트', '1')">
+	<input type="button" value="쿠키 출력" onclick="alert(getCookie('test'))">
+	<input type="button" value="쿠키 삭제" onclick="setCookie('test', '', -1)"> <!-- setCookie('test', 'cookie 테스트', '1') 삭제 --> 
+	<input type="button" value="이름 쿠키 삭제" onclick="setCookie('username', '', -1)"> <!-- 입력한 값 삭제 --> 
+	<input type="button" value="쿠키 입력 삭제" onclick="deleteCookie()">
+	<input type="button" value="쿠키 탐색" onclick="findCookie()">
+	
+<!-- 문제 : 삭제 버튼을 누르면 value를 입력받아 해당 쿠키를 지우도록 하는 버튼을 추가하시요 -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

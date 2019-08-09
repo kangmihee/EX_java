@@ -1,0 +1,18 @@
+[
+{
+"display": "네이버",
+"url": "http://www.naver.com"
+},
+{
+"display": "CSS Tutorial",
+"url": "http://www.w3schools.com/css/default.asp"
+},
+{
+"display": "다음",
+"url": "http://daum.net"
+},
+{
+"display": "구글",
+"url": "http://google.com/"
+}
+]

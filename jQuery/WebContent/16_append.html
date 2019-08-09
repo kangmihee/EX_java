@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<title>Insert title here</title>
+</head>
+<body>
+<p> 대한민국 만세</p>
+<!-- 뒤에 영원한 발전  -->
+<button>값추가</button>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("button").click(function () { 
+			$("p").append("영원한 발전");	 // 내 풀이
+			$("<span>영원한 발전</span>").appendTo("p"); // 쓰앵님 풀이
+		});	
+	});
+</script>
+</body>
+</html>

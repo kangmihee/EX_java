@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>이름</td><td>주소</td>
+		</tr>
+		<tr>
+			<td>힘모아</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>뜻모아</td><td>대전</td>
+		</tr>
+		<tr>
+			<td>하나로</td><td>대구</td>
+		</tr>
+		<tr>
+			<td>전진해</td><td>광주</td>
+		</tr>
+	</table>
+	
+	<script>
+		$("tr:odd").css("background-color", "#220044");		
+		$("tr:even").css("background-color", "yellow");
+		
+	</script>
+	
+	<!-- 문제: 위의 테이블에서 짝수행에는 백드라운드 컬러를 노란색, 홀수행에는 "#220044" 컬러를 적용하시오 -->
+</body>
+</html>

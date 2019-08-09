@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+	$(document).ready(function () {
+		$("button").click(function () {
+			$("#은우2").animate( {left:'100px', opacity:.5, width: "70%", borderWidth: '10px'}, 2000 );
+		});
+	});
+</script>
+</head>
+<body>
+	<img id="은우2" alt="" src="은우2.jpg" width="270" height="400" style="position: relative;"/><br/>
+	<button>animate()</button>
+
+</body>
+</html>

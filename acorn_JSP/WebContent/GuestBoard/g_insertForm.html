@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>글쓰기</h3>
+	<form action="g_insert.jsp" method="post">
+	
+		<label for="writer">작성자</label>
+		<input type="text" name="writer" id="writer" />
+		
+		<label for="title">제목</label>
+		<input type="text" name="title" id="title" />
+		
+		<label for="content">내용</label>
+		<input type="text" name="content" id="content" />
+		
+		<label for="regdate">등록일</label>
+		<input type="text" name="regdate" id="regdate" />
+		
+		<button type="submit">추가</button>
+		
+	</form>
+	<center>
+		<a href="guestborad.jsp">목록보기</a>
+		<br>
+		<a href="guest.html">메뉴로</a>
+	</center>
+</body>
+</html>

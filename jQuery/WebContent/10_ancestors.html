@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+	<style>
+		.ancestors *{
+			display: block;
+			border: 2px solid lightgrey; 
+			color: lightgrey;
+			padding: 5px;
+			margin: 15px;
+		}
+		span {
+			font-size: 15px;
+			font-color: blue;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$("span").parentsUntil("div").css({ // span인 나부터 div부모를 만날 때까지
+				"color" : "red",
+				"border" : "2px solid red"
+			}); // parent, child, ancestor(조상), descendant(후손)
+		});
+	</script>
+</head>
+<body class="ancestors">
+	body (great-great-grandparent)
+	<div style="width: 500px;">
+		div(greate-grandparent)
+		<ul>
+			ul(grandparent)
+			<li>li(parent) <span>span</span> <!-- 나를 중심하고 판단 -->
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	var x = 10;
+	var y = 20;
+	var z = x+y;
+	document.write(z);
+	function myFunction() {
+		var x = document.getElementsByTagName("LI");
+		// 고유한 id는 s가없고, getElementsByTagName는 여러개의ㅣ요소를 전제조건으로 함
+		document.getElementById("demo").innerHTML = x[1].innerHTML;
+		// 요소를 얻는 함수(3가지) getElementById, getElementsByName,getElementsByTagName
+		console.log("안녕하세요");
+	}
+	// 버튼을 클릭하면 consol.log에 안녕하세요를 출력하는 함수를 작성해 보시오
+</script>
+
+</head>
+<body>
+	<p> Unordered 리스트</p>
+	<ul>
+		<li>커피</li>
+		<li>주스</li>
+		<li>제과</li>
+	</ul>
+	<button onclick="myFunction()">버튼작동</button>
+	<p id="demo"></p>
+</body>
+</html>

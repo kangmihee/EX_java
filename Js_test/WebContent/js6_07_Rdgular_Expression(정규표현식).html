@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- exec, test, replace, match, search -->
+<!-- 문자열 검색 대체할 때 사용(쉽게대체가능) -->
+<script>
+// 정규표현식은 패턴을 만들고 그 패턴과 일치하는 텍스트를 찾아 검색하거나 대체한다
+// 패턴 : 발견하고자 하는 규칙
+// 맨입의 /와 뒤의 /를 패턴을 의미
+// ^는선두, $는 끝
+// []는 선택
+// {}는 중복 획수
+// 전화번호 확인하는 패턴
+	var regExp = /^\d{2,3}-\d{3,4}-\d{4}$/;  // '\d'는 숫자, '\D'는 숫자가 아닌 것
+											 // '\w'는 문자, '\W'는 문자가 아닌 것
+	//var regExp = /^[a-z0-9_]{4,20}$/;
+	
+	if( regExp.test("123-3333-4444") ){
+		alert("맞는 비밀번호");
+	}
+	else {
+		alert("틀린 비밀번호");
+	}
+	
+	// 휴대폰 체크 정규식
+	var regExp = /^01([0|1|6])-[0-9]{4}-[0-9]{4}$/
+		if( regExp.test("010-3333-2222") ){
+			alert("맞는 비밀번호");
+		}
+		else {
+			alert("틀린 비밀번호");
+		}
+	
+	
+	// 이메일 체크 정규식
+	function emailCheck(str) {
+		var regExp = /^[0-9a-zZ]*@[0-9a-zZ]*.[a-zA-Z]{2,3}$/
+		if(regExp.test(str)){
+			alert(str + "은 이메일 입니다."));
+		}
+		else{
+			alert(str + "은 이메일이 아닙니다."));
+		}
+	}
+</script>
+</head>
+<body>
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+	$(document).ready(function () {
+		
+		$("#btn1").click(function (e) {
+			// 실시간으로 스타일 추가하기 : .emp라고 하는 클래스 추가
+			$("<style id='empstyle'>.emp{background:gold;font-weight:bold}</style>").appendTo("table");
+			// contains 내용을 가진 find 해당하는 tag를 찾아서 addClass 클래스 추가
+			// 계층적 태그 선택법
+			// find : Tree traversal(운행), 선택한 것 중에서 조건
+			$("#table1 tbody tr").find("td:eq(1):contains('복태')").addClass("emp");
+		});
+		
+		$("#btn2").click(function (e) {
+			$(".emp").removeClass('emp'); // calss 찾기위해 앞에는 .을 붙여주고 뒤는 생략
+		});
+		
+		// filter는 1개만 바꿈
+		$("#btn3").click(function (e) { // chaining
+			// 함수형 프로그래밍(filter, find)
+			$("#table1 tbody tr").find("td:eq(3)").filter(function () {
+				return parseInt($(this).text()) >= 33
+			}).addClass("emp1");	
+			$("<style id='emp1style'>.emp1{background:pink;font-weight:bold}</style>").appendTo("head");
+		});
+		
+		$("#btn4").click(function (e) {
+			$("#emp1style").remove();
+		});
+		
+		$("#btn5").on("click",function (e) {
+			$(".emp").each(function (idx, item) { // 오버라이딩 매개변수, 1게(index) 2개
+				val=$(item).val(); // 태그의 속성
+				txt=$(item).text(); //태그 출력되는 contents
+				$("#print").append("<li value='"+val+"'>"+txt+"</li>");
+			});
+		});
+		
+		$("#btn6").on("click",function (e) {
+			// form 에서 선택 객체 선택, checkbox -> : checked, radio : selected (1개)
+			var chked_val = "";
+			// :checkbox 모든 체크박스 selector
+			// [] name 으로 선택 할 때
+			$(":checkbox[name='check[]']:checked").each(function (idx, item) {
+				chked_val += " "+item.value;
+			});
+			var winobj = window.open("","","width=250, height=200, left=0, top=0");
+			winobj.document.write("<p>"+chked_val+"</p>");
+		});
+		
+		$("#btn7").on("click", function(e) {
+	         var i = 0;
+	         $(":checkbox[name='check[]']").each(function(idx, item) {
+	            $(item).data("ordernum",i);
+	            i += 1;
+	         });
+	         $(":checkbox[name='check[]']:checked").each(function(idx, item) {
+	            var chi = $("#table1 tbody tr:eq(" + $(item).data("ordernum") + ")").children();
+	            chi.each(function(idx, item) {
+	               $("#list7").append("<option value='" + $(item).val() + "'>" + $(item).text() + "</option>");
+	            });
+	         });
+	      });	
+		
+		$("#btn8").on("click",function () {
+			var $cblist = $("input:checkbox");
+				 $cblist.each(function () {
+					if(this.checked){
+						var $checkedRow = $(this).parent().parent();
+						$("#checked").append("<br>");
+						$checkedRow.each(function (index,item){
+							var ckid = $(this).children(":eq(0)").text();
+							var ckname = $(this).children(":eq(1)").text();
+							var ckarea = $(this).children(":eq(2)").text();
+							var ckage = $(this).children(":eq(3)").text();
+							var ckpoint = $(this).children(":eq(4)").text();
+							$("#checked").append(ckid+":"+ckname+":"+ckarea+":"+ckage+":"+ckpoint);
+						});
+					}
+				});
+			});
+		
+	});
+</script>
+
+</head>
+<body>
+<!-- 버튼을 클릭하면 복태라는 사람한테 빨간색으로 칠하시오-->
+	<p id="btn_group">
+		<input type="button" id="btn1" value="스타일추가">
+		<input type="button" id="btn2" value="스타일제거">
+		<input type="button" id="btn3" value="32세이상">
+		<input type="button" id="btn4" value="32세이상 스타일 제거">
+	</p>
+
+	<table width="400" id="table1">
+		<thead>
+			<tr>
+				<td>아이디</td>
+				<td>이름</td>
+				<td>직역</td>
+				<td>나이</td>
+				<td>Point</td>
+				<td>check</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>kim</td>
+				<td>김복태</td>
+				<td>서울</td>
+				<td>32</td>
+				<td>80</td>
+				<td><input type="checkbox" name="check[]" value="김복택"></td>
+			</tr>
+			<tr>
+				<td>choi</td>
+				<td>최인숙</td>
+				<td>대전</td>
+				<td>35</td>
+				<td>100</td>
+				<td><input type="checkbox" name="check[]" value="최인숙"></td>
+			</tr>
+			<tr>
+				<td>park</td>
+				<td>박복태</td>
+				<td>강원</td>
+				<td>29</td>
+				<td>85</td>
+				<td><input type="checkbox" name="check[]" value="박복태"></td>
+			</tr>
+			<tr>
+				<td>oh</td>
+				<td>오복태</td>
+				<td>서울</td>
+				<td>33</td>
+				<td>90</td>
+				<td><input type="checkbox" name="check[]" value="오복태"></td>
+			</tr>
+			<tr>
+				<td>jung</td>
+				<td>정순돌</td>
+				<td>제주</td>
+				<td>37</td>
+				<td>92</td>
+				<td><input type="checkbox" name="check[]" value="정순돌"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<input type="button" id="btn5" value="선택 부분 출력">
+	<ul id="print"></ul>
+	
+	<input type="button" id="btn6" value="체크출력1">
+	
+	<input type="button" id="btn7" value="체크출력2">
+	<ul id="list7"></ul>
+	
+	<input type="button" id="btn8" value="체크출력3">
+	<p id="checked"></p>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

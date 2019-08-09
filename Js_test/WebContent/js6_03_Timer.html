@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// Timer : setInterval : 일정한주기로, setTimeout : 일정시간후 1회만 작동
+// 1초 : 1000ms
+// clearInterval, clearTimeout
+// Date는 초기화 오버라이딩 : 밀리초, 문자열, 년, 월, 일, 시, 분, 초, 밀리초
+// Date : Object형 데이터타입 
+// 표준시간 : UTC
+window.defaultStatus = "상태표시줄에 기본내용";
+
+	function fconfirm() {
+		k = confirm("확인, 취소버튼 확인?" );
+		if(k == true ) 
+			txt1.value = "확인";
+		else
+			txt1.value = "취소";
+	}
+	
+	function startSI() {
+		myTime = new Date();
+		txt2.value = myTime.getHours() + ":" + myTime.getMinutes() + ":" + myTime.getSeconds();
+	}
+	
+	function Tstart(a) {
+		if( a == 1 )
+			Time_ID = setInterval("startSI()", 1000); // 매개변수는 callback함수(startSI())
+		else
+			clearInterval(Time_ID); // 중지
+	}
+	
+	function Tout() {
+		Time_ID2 = setTimeout("startS2()",2000);
+	}
+	
+	function startS2() {
+		mycolor = new Array("Red","blue","Green","White","black");
+		myTime  new Date();
+		txt2.style.background = mycolor[myTime,getSeconds() % 5];
+		Tout();
+	}
+	
+	function myFunction() { // fconfirm : yes/no 
+							// 창을 오픈하면 다양한 작업이 가능
+							// 창을 오픈한 창을 opener
+							// 두개의 창이 데이터를 주고 받을 수 있음
+		var myWindow = window.open("","myWindow","width=200,height=100");
+		myWindow.document.write("<p>새창입니다. </p>");
+		myWindow.opener.document.write("<p>창을 오픈한 것에 출력합니다. !</p>");
+	}
+	
+	
+</script>
+</head>
+<body>
+	<p id="demo"></p>
+	<button onclick="clearInterval(myVar)">Stop time</button>
+	
+	<input type="button" value="setTimeout() 실행" onclick="Tout()">
+	<input type="button" value="타이머 중지" onclick="clearTimeout(Time_ID2)">
+	<p>
+	<input type="button" value="setInterval() 실행" onclick="Tstart(1)"> &nbsp;&nbsp;
+	<input type="text"  size="10" name="txt2"> &nbsp;&nbsp;
+	<input type="button" value="타이머 중지" onclick="Tstart(2)">
+	<p>
+	<input type="button" value="확인취소버튼" onclick="fconfirm()">&nbsp;&nbsp;
+	<input type="text"  size="20" name="txt1">
+	<p>
+	<button onclick="myFunction()">창을 오픈합니다.</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

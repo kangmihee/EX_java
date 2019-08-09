@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 예비폼 연습</title>
+
+	<script>
+		function show() {
+			form = document.forms[0]; // 계층적 구조로 형성
+			n = form.irum.value;
+			if(n==""){
+				alert("이름을 입력하세요.");
+				form.irum.focus();
+				return;
+			}
+			if(form.sung[0].checked)
+				s = "남자";
+			else
+				s = "여자";
+			str = "";
+			for(i=0;i<form.like.length;i++){ // 배열구조인 경우 length
+				if(form.like[i].checked){
+					if(str=="")
+						str = form.like[i].value;
+					else
+						str += "," + form.like[i].value;
+				}
+			}
+			data = n + "씨\n";
+			data += "당신은" + s + "이고,\n";
+			if(str=="")
+				data += "취미가 없군요!!!";
+			else
+				data += "취미는" + str + "이군요!";
+			form.result.value = data;			
+		}
+	</script>
+	
+</head>
+<body>
+
+	<form>
+		이름 : <input type="text" name="irum"><p> <!-- 문자열 -->
+		성별 : <input type="radio" name="sung" checked>남자
+			   <input type="radio" name="sung">여자<p>
+		취미 : <input type="checkbox" name="like" value="등산">등산
+			   <input type="checkbox" name="like" value="낚시">낚시
+			   <input type="checkbox" name="like" value="바둑">바둑
+			   <input type="checkbox" name="like" value="장기">장기
+			   <input type="checkbox" name="like" value="독서">독서
+			   <input type="checkbox" name="like" value="게임">게임
+			   
+			   <input type="button" value="결과확인" onclick="show()"><p>
+			   <textarea rows="40" cols="15" name="result"></textarea>
+	</form>
+
+</body>
+</html>
